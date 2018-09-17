@@ -19,7 +19,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="G9r-i5-e7G"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="K0J-TY-Nwf"/>
+                    <tabBarItem key="tabBarItem" image="bookmark" id="K0J-TY-Nwf">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BuY-rm-Iws" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -35,7 +37,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Wmi-2Y-ePj"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="jVT-bm-xqD"/>
+                    <tabBarItem key="tabBarItem" image="bell-white" id="jVT-bm-xqD">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fNz-s5-gnd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -51,7 +55,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Y1s-Aj-H4O"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="downloads" id="yi2-jV-LtN"/>
+                    <tabBarItem key="tabBarItem" image="profile" id="yi2-jV-LtN">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xqf-qY-XEd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -67,7 +73,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="EM3-JF-xEa"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="search" id="R2B-kh-phx">
+                    <tabBarItem key="tabBarItem" image="create" id="R2B-kh-phx">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                 </viewController>
@@ -86,7 +93,7 @@
                         <viewLayoutGuide key="safeArea" id="8Tj-Nq-94w"/>
                     </view>
                     <navigationItem key="navigationItem" id="GxX-cL-84x">
-                        <barButtonItem key="leftBarButtonItem" systemItem="camera" id="sIc-aN-u2F">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="headphone" landscapeImage="headphone" id="sIc-aN-u2F">
                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="wfv-oz-24P">
@@ -126,7 +133,7 @@
         <scene sceneID="XRl-N8-Ecm">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AVn-Nt-lxD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="dEF-6P-kYL">
+                    <tabBarItem key="tabBarItem" image="home" id="dEF-6P-kYL">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
@@ -145,4 +152,12 @@
             <point key="canvasLocation" x="8.8000000000000007" y="-634.632683658171"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bell-white" width="21" height="24"/>
+        <image name="bookmark" width="20" height="24"/>
+        <image name="create" width="26" height="26"/>
+        <image name="headphone" width="24" height="24"/>
+        <image name="home" width="24" height="22"/>
+        <image name="profile" width="26" height="24"/>
+    </resources>
 </document>
