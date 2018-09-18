@@ -8,22 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		CF123E86214F8145009B0994 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF123E85214F8145009B0994 /* AppDelegate.swift */; };
-		CF123E88214F8145009B0994 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF123E87214F8145009B0994 /* ViewController.swift */; };
 		CF123E8B214F8145009B0994 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF123E89214F8145009B0994 /* Main.storyboard */; };
 		CF123E8D214F8147009B0994 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF123E8C214F8147009B0994 /* Assets.xcassets */; };
 		CF123E90214F8147009B0994 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF123E8E214F8147009B0994 /* LaunchScreen.storyboard */; };
-		CF123E98214F99CF009B0994 /* BookMarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF123E97214F99CF009B0994 /* BookMarkViewController.swift */; };
+		CFD653052150D1D8008C722B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD653042150D1D8008C722B /* HomeViewController.swift */; };
+		CFD653072150D226008C722B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD653062150D226008C722B /* HomeViewModel.swift */; };
+		CFD6530C2150D3DB008C722B /* WideStoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD6530A2150D3DB008C722B /* WideStoryViewCell.swift */; };
+		CFD6530D2150D3DB008C722B /* WideStoryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFD6530B2150D3DB008C722B /* WideStoryViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CF123E82214F8145009B0994 /* MediumClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediumClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF123E85214F8145009B0994 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CF123E87214F8145009B0994 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CF123E8A214F8145009B0994 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CF123E8C214F8147009B0994 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF123E8F214F8147009B0994 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF123E91214F8147009B0994 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CF123E97214F99CF009B0994 /* BookMarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarkViewController.swift; sourceTree = "<group>"; };
+		CFD653042150D1D8008C722B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CFD653062150D226008C722B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		CFD6530A2150D3DB008C722B /* WideStoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WideStoryViewCell.swift; sourceTree = "<group>"; };
+		CFD6530B2150D3DB008C722B /* WideStoryViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WideStoryViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,49 @@
 		CF123E84214F8145009B0994 /* MediumClone */ = {
 			isa = PBXGroup;
 			children = (
+				CFD653022150D1AA008C722B /* Module */,
 				CF123E85214F8145009B0994 /* AppDelegate.swift */,
-				CF123E97214F99CF009B0994 /* BookMarkViewController.swift */,
-				CF123E87214F8145009B0994 /* ViewController.swift */,
 				CF123E89214F8145009B0994 /* Main.storyboard */,
 				CF123E8C214F8147009B0994 /* Assets.xcassets */,
 				CF123E8E214F8147009B0994 /* LaunchScreen.storyboard */,
 				CF123E91214F8147009B0994 /* Info.plist */,
 			);
 			path = MediumClone;
+			sourceTree = "<group>";
+		};
+		CFD653022150D1AA008C722B /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				CFD653092150D38A008C722B /* CommonViews */,
+				CFD653032150D1B4008C722B /* Home */,
+				CFD653082150D23A008C722B /* Bookmark */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		CFD653032150D1B4008C722B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CFD653042150D1D8008C722B /* HomeViewController.swift */,
+				CFD653062150D226008C722B /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CFD653082150D23A008C722B /* Bookmark */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Bookmark;
+			sourceTree = "<group>";
+		};
+		CFD653092150D38A008C722B /* CommonViews */ = {
+			isa = PBXGroup;
+			children = (
+				CFD6530A2150D3DB008C722B /* WideStoryViewCell.swift */,
+				CFD6530B2150D3DB008C722B /* WideStoryViewCell.xib */,
+			);
+			path = CommonViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +166,7 @@
 				CF123E90214F8147009B0994 /* LaunchScreen.storyboard in Resources */,
 				CF123E8D214F8147009B0994 /* Assets.xcassets in Resources */,
 				CF123E8B214F8145009B0994 /* Main.storyboard in Resources */,
+				CFD6530D2150D3DB008C722B /* WideStoryViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +177,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF123E88214F8145009B0994 /* ViewController.swift in Sources */,
-				CF123E98214F99CF009B0994 /* BookMarkViewController.swift in Sources */,
+				CFD6530C2150D3DB008C722B /* WideStoryViewCell.swift in Sources */,
 				CF123E86214F8145009B0994 /* AppDelegate.swift in Sources */,
+				CFD653052150D1D8008C722B /* HomeViewController.swift in Sources */,
+				CFD653072150D226008C722B /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
