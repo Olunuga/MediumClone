@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         tableView.register(UINib(nibName: "WideStoryViewCell", bundle: nil), forCellReuseIdentifier: "wideCell")
+        tableView.register(UINib(nibName: "SwipableTableViewCell", bundle: nil), forCellReuseIdentifier: "swipeCell")
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
@@ -46,9 +47,19 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      let cell = tableView.dequeueReusableCell(withIdentifier: "wideCell", for: indexPath) as! WideStoryViewCell
-        cell.selectionStyle = .none
-        return cell
+
+        let wideCell = tableView.dequeueReusableCell(withIdentifier: "wideCell", for: indexPath) as! WideStoryViewCell
+        wideCell.selectionStyle = .none
+        
+        let compactCell = tableView.dequeueReusableCell(withIdentifier: "swipeCell", for: indexPath) as! SwipableTableViewCell
+        compactCell.selectionStyle = .none
+        compactCell.copmpactCellData = [String]()
+
+        if indexPath.row == 0 {
+            return compactCell
+        }
+       
+        return wideCell
     }
     
     
