@@ -22,10 +22,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="280.5"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ySl-V8-WX5" customClass="SwipableTableViewCell">
-                                <rect key="frame" x="0.0" y="59.5" width="320" height="201"/>
+                                <rect key="frame" x="0.0" y="60" width="320" height="221"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="201" id="6V3-m9-2u2"/>
+                                    <constraint firstAttribute="height" constant="221" id="6V3-m9-2u2"/>
                                     <constraint firstAttribute="width" constant="320" id="jZt-B2-nt6"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="34Z-Zf-3da">

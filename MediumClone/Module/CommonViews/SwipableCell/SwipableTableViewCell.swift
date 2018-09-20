@@ -61,9 +61,9 @@ extension SwipableTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "compactCell", for: indexPath) as! CompactStoryCollectionViewCell
         cell.cornerRadius = 8
         cell.layer.masksToBounds = false
-        cell.setShadowColor(UIColor(white: 0.6, alpha: 0.3), for: .normal)
+        cell.setShadowColor(UIColor(white: 0.5, alpha: 0.7), for: .normal)
         cell.setShadowColor(UIColor(white: 1, alpha: 0.3), for: .highlighted)
-        cell.setShadowElevation(ShadowElevation(rawValue: 4), for: .normal)
+        cell.setShadowElevation(ShadowElevation(rawValue: 10), for: .normal)
         cell.setShadowElevation(ShadowElevation(rawValue: 1), for: .highlighted)
         cell.isSelectable = false
 
@@ -71,7 +71,7 @@ extension SwipableTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 270, height: 174)
+        return CGSize(width: 290, height: 194)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
