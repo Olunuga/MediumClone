@@ -51,12 +51,23 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         let wideCell = tableView.dequeueReusableCell(withIdentifier: "wideCell", for: indexPath) as! WideStoryViewCell
         wideCell.selectionStyle = .none
         
-        let compactCell = tableView.dequeueReusableCell(withIdentifier: "swipeCell", for: indexPath) as! SwipableTableViewCell
-        compactCell.selectionStyle = .none
-        compactCell.copmpactCellData = [String]()
+        let swipeCell = tableView.dequeueReusableCell(withIdentifier: "swipeCell", for: indexPath) as! SwipableTableViewCell
+        swipeCell.selectionStyle = .none
+        swipeCell.hideTitle()
+        swipeCell.copmpactCellData = [String]()
+        
+        
+        let swipeCell2 = tableView.dequeueReusableCell(withIdentifier: "swipeCell", for: indexPath) as! SwipableTableViewCell
+        swipeCell2.selectionStyle = .none
+        swipeCell2.randomBackgroundColor()
+        swipeCell2.copmpactCellData = [String]()
 
         if indexPath.row == 0 {
-            return compactCell
+            return swipeCell
+        }
+        
+        if indexPath.row == 5 {
+            return swipeCell2
         }
        
         return wideCell
