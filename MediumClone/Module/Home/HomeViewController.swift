@@ -8,8 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
-    
+class HomeViewController: UIViewController , onStoryItemClickedProtocol{
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -25,7 +24,35 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    
+    
+    
+    func buttonPressed(action: Action) {
+        switch action {
+        case .bookMark:
+            print("book mark was pressed")
+            //tableView.reloadData()  Reload data in a single row
+        case .menu:
+            print("menu was pressed")
+            showMenu()
+        }
+    }
+    
+    
+    
+    func showMenu() {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Show fewer stories like this", style: .default, handler: { (action) in
+            //do something
+        }))
+        alert.addAction(UIAlertAction(title: "Show fewer stories from Publisher", style: .default, handler: { (action) in
+            //do something
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -50,6 +77,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
 
         let wideCell = tableView.dequeueReusableCell(withIdentifier: "wideCell", for: indexPath) as! WideStoryViewCell
         wideCell.selectionStyle = .none
+        wideCell.setDelegate(delegate: self)
         
         let swipeCell = tableView.dequeueReusableCell(withIdentifier: "swipeCell", for: indexPath) as! SwipableTableViewCell
         swipeCell.selectionStyle = .none
