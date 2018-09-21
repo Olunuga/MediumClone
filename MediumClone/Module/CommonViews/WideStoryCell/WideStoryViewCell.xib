@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="184"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="183.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="184"/>
                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BmH-uR-CjV" userLabel="MainContainer">
@@ -82,7 +82,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yiw-UI-9aZ">
-                                        <rect key="frame" x="242" y="11" width="13" height="17"/>
+                                        <rect key="frame" x="229" y="12" width="13" height="17"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="17" id="3RC-VN-9WD"/>
                                             <constraint firstAttribute="width" constant="13" id="IqG-1v-db5"/>
@@ -95,8 +95,8 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="yiw-UI-9aZ" secondAttribute="bottom" constant="2.5" id="Atp-S2-hNA"/>
-                                    <constraint firstItem="H6v-6w-fG4" firstAttribute="leading" secondItem="yiw-UI-9aZ" secondAttribute="trailing" constant="14" id="FMP-j6-Uq2"/>
+                                    <constraint firstAttribute="bottom" secondItem="yiw-UI-9aZ" secondAttribute="bottom" constant="1.5" id="Atp-S2-hNA"/>
+                                    <constraint firstItem="H6v-6w-fG4" firstAttribute="leading" secondItem="yiw-UI-9aZ" secondAttribute="trailing" constant="27" id="FMP-j6-Uq2"/>
                                     <constraint firstAttribute="trailing" secondItem="H6v-6w-fG4" secondAttribute="trailing" constant="12" id="GyE-qM-VQS"/>
                                     <constraint firstItem="7sy-px-WgX" firstAttribute="top" secondItem="i5S-4e-AhU" secondAttribute="top" id="M6y-Ik-vxH"/>
                                     <constraint firstItem="H6v-6w-fG4" firstAttribute="top" secondItem="4Q3-iE-tPi" secondAttribute="top" constant="10" id="UkJ-jC-mu4"/>
