@@ -10,6 +10,13 @@ import UIKit
 
 class HomeViewController: UIViewController , onStoryItemClickedProtocol{
     @IBOutlet weak var tableView: UITableView!
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(HomeViewController.handleRefresh(_:)), for: UIControl.Event.valueChanged)
+       return refreshControl
+    }()
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +28,14 @@ class HomeViewController: UIViewController , onStoryItemClickedProtocol{
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 240.0
         tableView.separatorColor = UIColor(white: 0.5, alpha: 0.3)
+        tableView.addSubview(refreshControl)
         // Do any additional setup after loading the view.
     }
     
     
+    @objc func handleRefresh(_ refreshControl : UIRefreshControl) {
+        refreshControl.endRefreshing();
+    }
     
     
     func buttonPressed(action: Action) {
@@ -74,6 +85,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        tableView.tableHeaderView?.isHidden = true;
 
         let wideCell = tableView.dequeueReusableCell(withIdentifier: "wideCell", for: indexPath) as! WideStoryViewCell
         wideCell.selectionStyle = .none
@@ -97,10 +109,21 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         if indexPath.row == 5 {
             return swipeCell2
         }
+        
+        let lastSectionIndex = tableView.numberOfSections - 1
+        let lastRowIndex = tableView.numberOfRows(inSection: lastSectionIndex) - 1
+        if indexPath.section ==  lastSectionIndex && indexPath.row == lastRowIndex {
+            // print("this is the last cell")
+            let spinner = UIActivityIndicatorView(style: .gray)
+            spinner.startAnimating()
+            spinner.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: tableView.bounds.width, height: CGFloat(44))
+            
+            
+            tableView.tableFooterView = spinner
+            tableView.tableHeaderView?.isHidden = false;
+        }
        
         return wideCell
     }
-    
-    
     
 }
