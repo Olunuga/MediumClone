@@ -12,6 +12,13 @@
 		CF123E8B214F8145009B0994 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF123E89214F8145009B0994 /* Main.storyboard */; };
 		CF123E8D214F8147009B0994 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF123E8C214F8147009B0994 /* Assets.xcassets */; };
 		CF123E90214F8147009B0994 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF123E8E214F8147009B0994 /* LaunchScreen.storyboard */; };
+		CF6E08DE2156EEC900790C92 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6E08DC2156EEC900790C92 /* SearchViewController.swift */; };
+		CF6E08DF2156EEC900790C92 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF6E08DD2156EEC900790C92 /* SearchViewController.xib */; };
+		CF9675DA2158B0100074CF72 /* test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF9675D92158B0100074CF72 /* test.storyboard */; };
+		CFA7E9212159833200100038 /* SearchItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA7E91F2159833200100038 /* SearchItemViewCell.swift */; };
+		CFA7E9222159833200100038 /* SearchItemViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFA7E9202159833200100038 /* SearchItemViewCell.xib */; };
+		CFA7E92D21598C6900100038 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFA7E92C21598C6900100038 /* HeaderView.xib */; };
+		CFA7E92F21598D8B00100038 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA7E92E21598D8B00100038 /* HeaderView.swift */; };
 		CFCCCAB921521237001C0995 /* CompactStoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCCCAB721521237001C0995 /* CompactStoryCollectionViewCell.swift */; };
 		CFCCCABA21521237001C0995 /* CompactStoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFCCCAB821521237001C0995 /* CompactStoryCollectionViewCell.xib */; };
 		CFCCCABD215214E8001C0995 /* SwipableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCCCABB215214E8001C0995 /* SwipableTableViewCell.swift */; };
@@ -32,6 +39,13 @@
 		CF123E8C214F8147009B0994 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF123E8F214F8147009B0994 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF123E91214F8147009B0994 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF6E08DC2156EEC900790C92 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		CF6E08DD2156EEC900790C92 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		CF9675D92158B0100074CF72 /* test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = test.storyboard; sourceTree = "<group>"; };
+		CFA7E91F2159833200100038 /* SearchItemViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemViewCell.swift; sourceTree = "<group>"; };
+		CFA7E9202159833200100038 /* SearchItemViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchItemViewCell.xib; sourceTree = "<group>"; };
+		CFA7E92C21598C6900100038 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		CFA7E92E21598D8B00100038 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		CFCCCAB721521237001C0995 /* CompactStoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompactStoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		CFCCCAB821521237001C0995 /* CompactStoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompactStoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		CFCCCABB215214E8001C0995 /* SwipableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipableTableViewCell.swift; sourceTree = "<group>"; };
@@ -89,8 +103,20 @@
 				CF123E8C214F8147009B0994 /* Assets.xcassets */,
 				CF123E8E214F8147009B0994 /* LaunchScreen.storyboard */,
 				CF123E91214F8147009B0994 /* Info.plist */,
+				CF9675D92158B0100074CF72 /* test.storyboard */,
 			);
 			path = MediumClone;
+			sourceTree = "<group>";
+		};
+		CF6E08DB2156EDF000790C92 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				CFA7E923215989F800100038 /* HeaderView */,
+				CFA7E91E2159831200100038 /* ItemCell */,
+				CF6E08DC2156EEC900790C92 /* SearchViewController.swift */,
+				CF6E08DD2156EEC900790C92 /* SearchViewController.xib */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		CF7EA69EDC794E3DB1FBEDC6 /* Pods */ = {
@@ -100,6 +126,24 @@
 				0E4458E8E6003CC34D899756 /* Pods-MediumClone.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		CFA7E91E2159831200100038 /* ItemCell */ = {
+			isa = PBXGroup;
+			children = (
+				CFA7E91F2159833200100038 /* SearchItemViewCell.swift */,
+				CFA7E9202159833200100038 /* SearchItemViewCell.xib */,
+			);
+			path = ItemCell;
+			sourceTree = "<group>";
+		};
+		CFA7E923215989F800100038 /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				CFA7E92C21598C6900100038 /* HeaderView.xib */,
+				CFA7E92E21598D8B00100038 /* HeaderView.swift */,
+			);
+			path = HeaderView;
 			sourceTree = "<group>";
 		};
 		CFCCCAB6215211DD001C0995 /* WideStoryCell */ = {
@@ -134,6 +178,7 @@
 			children = (
 				CFD653092150D38A008C722B /* CommonViews */,
 				CFD653032150D1B4008C722B /* Home */,
+				CF6E08DB2156EDF000790C92 /* Search */,
 				CFD653082150D23A008C722B /* Bookmark */,
 			);
 			path = Module;
@@ -226,11 +271,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFCCCABE215214E8001C0995 /* SwipableTableViewCell.xib in Resources */,
+				CFA7E92D21598C6900100038 /* HeaderView.xib in Resources */,
 				CF123E90214F8147009B0994 /* LaunchScreen.storyboard in Resources */,
 				CF123E8D214F8147009B0994 /* Assets.xcassets in Resources */,
 				CF123E8B214F8145009B0994 /* Main.storyboard in Resources */,
 				CFCCCABA21521237001C0995 /* CompactStoryCollectionViewCell.xib in Resources */,
+				CFA7E9222159833200100038 /* SearchItemViewCell.xib in Resources */,
 				CFD6530D2150D3DB008C722B /* WideStoryViewCell.xib in Resources */,
+				CF9675DA2158B0100074CF72 /* test.storyboard in Resources */,
+				CF6E08DF2156EEC900790C92 /* SearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,7 +330,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFD6530C2150D3DB008C722B /* WideStoryViewCell.swift in Sources */,
+				CFA7E92F21598D8B00100038 /* HeaderView.swift in Sources */,
+				CF6E08DE2156EEC900790C92 /* SearchViewController.swift in Sources */,
 				CF123E86214F8145009B0994 /* AppDelegate.swift in Sources */,
+				CFA7E9212159833200100038 /* SearchItemViewCell.swift in Sources */,
 				CFCCCAB921521237001C0995 /* CompactStoryCollectionViewCell.swift in Sources */,
 				CFD653052150D1D8008C722B /* HomeViewController.swift in Sources */,
 				CFCCCABD215214E8001C0995 /* SwipableTableViewCell.swift in Sources */,
