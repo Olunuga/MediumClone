@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.9"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchCell" rowHeight="51" id="KGk-i7-Jjw" customClass="SearchItemViewCell" customModule="MediumClone" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="51"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="50.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nOD-nZ-FTS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="51.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XSC-GX-tCg">
+                                <rect key="frame" x="15" y="17" width="42" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="A38-YA-LbY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.25166886595150961" green="0.62002300126903553" blue="0.56097356204394355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="51" id="9yt-uP-RNQ"/>
+                            <constraint firstItem="XSC-GX-tCg" firstAttribute="leading" secondItem="nOD-nZ-FTS" secondAttribute="leading" constant="15" id="Erp-Cd-oOr"/>
+                            <constraint firstItem="XSC-GX-tCg" firstAttribute="centerY" secondItem="nOD-nZ-FTS" secondAttribute="centerY" constant="-0.25" id="N4R-in-DNK"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="nOD-nZ-FTS" secondAttribute="trailing" id="6kL-ug-Jww"/>
+                    <constraint firstItem="nOD-nZ-FTS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="r1N-u9-HNg"/>
+                    <constraint firstAttribute="bottom" secondItem="nOD-nZ-FTS" secondAttribute="bottom" id="rEv-fn-cLv"/>
+                    <constraint firstItem="nOD-nZ-FTS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="tnV-WR-sAg"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="labelSearchHistory" destination="XSC-GX-tCg" id="vUm-9J-Czc"/>
+            </connections>
+            <point key="canvasLocation" x="137.59999999999999" y="156.97151424287858"/>
+        </tableViewCell>
+    </objects>
+</document>

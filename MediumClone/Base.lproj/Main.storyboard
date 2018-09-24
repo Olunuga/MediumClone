@@ -32,6 +32,9 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="fBI-tV-SyV">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="searchButtonClicked:" destination="737-FS-I3P" id="TLj-L5-bjr"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>

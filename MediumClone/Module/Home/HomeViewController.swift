@@ -64,6 +64,19 @@ class HomeViewController: UIViewController , onStoryItemClickedProtocol{
         self.present(alert, animated: true, completion: nil)
     }
     
+    @IBAction func searchButtonClicked(_ sender: UIBarButtonItem) {
+        let searchVC = SearchViewController()
+        let transition = CATransition()
+        transition.duration = 0.3
+        transition.type = CATransitionType.moveIn
+        transition.subtype = CATransitionSubtype.fromRight
+        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeOut)
+        view.window!.layer.add(transition, forKey: kCATransition)
+    
+        present(searchVC, animated: false, completion: nil)
+    }
+    
+    
     /*
     // MARK: - Navigation
 
