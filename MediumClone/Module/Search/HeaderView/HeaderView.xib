@@ -23,6 +23,9 @@
                             <state key="normal" title="Clear">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="clearButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="6Du-K0-yzz"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search history" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="puX-nx-1Am">
                             <rect key="frame" x="19" y="15.5" width="120" height="21"/>

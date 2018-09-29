@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="MediumClone" customModuleProvider="target">
             <connections>
+                <outlet property="labelCancel" destination="9ir-4x-TjS" id="18H-2X-wam"/>
                 <outlet property="searchDisplayController" destination="Gah-Je-Daq" id="kna-2z-mFa"/>
                 <outlet property="tableView" destination="bsK-5j-NL6" id="p2b-de-hd8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -33,6 +34,9 @@
                             <state key="normal" title="Cancel">
                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="-1" eventType="touchUpInside" id="uxx-Do-yRA"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVx-hb-Cpj">
                             <rect key="frame" x="14" y="15" width="34" height="30"/>
