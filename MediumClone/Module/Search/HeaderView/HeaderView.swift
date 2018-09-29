@@ -8,8 +8,17 @@
 
 import UIKit
 
-class HeaderView: UIView {
+protocol ClearButtonProtocol {
+    func onClearButtonPressed()
+}
 
+class HeaderView: UIView {
+    
+    var delegate: ClearButtonProtocol? = nil
+    
+    override func awakeFromNib() {
+        
+    }
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -18,4 +27,10 @@ class HeaderView: UIView {
     }
     */
 
+    @IBAction func clearButtonPressed(_ sender: UIButton) {
+        if delegate != nil {
+            delegate?.onClearButtonPressed()
+        }
+    }
+    
 }
