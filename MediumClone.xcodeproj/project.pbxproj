@@ -23,6 +23,7 @@
 		CFA7E9222159833200100038 /* SearchItemViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFA7E9202159833200100038 /* SearchItemViewCell.xib */; };
 		CFA7E92D21598C6900100038 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFA7E92C21598C6900100038 /* HeaderView.xib */; };
 		CFA7E92F21598D8B00100038 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA7E92E21598D8B00100038 /* HeaderView.swift */; };
+		CFC1AFAA21640800003DCE1F /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC1AFA921640800003DCE1F /* BookmarkViewController.swift */; };
 		CFCCCAB921521237001C0995 /* CompactStoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCCCAB721521237001C0995 /* CompactStoryCollectionViewCell.swift */; };
 		CFCCCABA21521237001C0995 /* CompactStoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFCCCAB821521237001C0995 /* CompactStoryCollectionViewCell.xib */; };
 		CFCCCABD215214E8001C0995 /* SwipableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCCCABB215214E8001C0995 /* SwipableTableViewCell.swift */; };
@@ -54,6 +55,7 @@
 		CFA7E9202159833200100038 /* SearchItemViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchItemViewCell.xib; sourceTree = "<group>"; };
 		CFA7E92C21598C6900100038 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		CFA7E92E21598D8B00100038 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		CFC1AFA921640800003DCE1F /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
 		CFCCCAB721521237001C0995 /* CompactStoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompactStoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		CFCCCAB821521237001C0995 /* CompactStoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompactStoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		CFCCCABB215214E8001C0995 /* SwipableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipableTableViewCell.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 		CFD653082150D23A008C722B /* Bookmark */ = {
 			isa = PBXGroup;
 			children = (
+				CFC1AFA921640800003DCE1F /* BookmarkViewController.swift */,
 			);
 			path = Bookmark;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				CFA7E92F21598D8B00100038 /* HeaderView.swift in Sources */,
 				CF6E08DE2156EEC900790C92 /* SearchViewController.swift in Sources */,
 				CF435475215FECCC003553CE /* SuggestedHeaderView.swift in Sources */,
+				CFC1AFAA21640800003DCE1F /* BookmarkViewController.swift in Sources */,
 				CF123E86214F8145009B0994 /* AppDelegate.swift in Sources */,
 				CFA7E9212159833200100038 /* SearchItemViewCell.swift in Sources */,
 				CFCCCAB921521237001C0995 /* CompactStoryCollectionViewCell.swift in Sources */,
