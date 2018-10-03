@@ -131,10 +131,10 @@
             </objects>
             <point key="canvasLocation" x="1852" y="-303"/>
         </scene>
-        <!--View Controller-->
+        <!--Bookmark View Controller-->
         <scene sceneID="Guu-xC-2CV">
             <objects>
-                <viewController id="9rh-pO-DBs" sceneMemberID="viewController">
+                <viewController id="9rh-pO-DBs" customClass="BookmarkViewController" customModule="MediumClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vy6-CW-JhO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
