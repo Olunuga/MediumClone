@@ -20,7 +20,9 @@ enum Action {
 
 class WideStoryViewCell: UITableViewCell {
     var delegate : onStoryItemClickedProtocol? = nil
-
+    @IBOutlet weak var actionMenuWidthConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var bookmarkButtonTrailingContraint: NSLayoutConstraint!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

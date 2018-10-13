@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="184"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="184"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="183.5"/>
                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BmH-uR-CjV" userLabel="MainContainer">
@@ -180,9 +180,11 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="actionMenuWidthConstraint" destination="ZIE-O5-EvP" id="7O1-Vf-UUd"/>
+                <outlet property="bookmarkButtonTrailingContraint" destination="FMP-j6-Uq2" id="nqs-PJ-aei"/>
                 <outlet property="buttonBookmark" destination="yiw-UI-9aZ" id="xeL-dV-UjY"/>
             </connections>
-            <point key="canvasLocation" x="124.8" y="105.24737631184409"/>
+            <point key="canvasLocation" x="45" y="105"/>
         </tableViewCell>
     </objects>
     <resources>
