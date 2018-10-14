@@ -12,13 +12,13 @@
 		CF123E8B214F8145009B0994 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF123E89214F8145009B0994 /* Main.storyboard */; };
 		CF123E8D214F8147009B0994 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF123E8C214F8147009B0994 /* Assets.xcassets */; };
 		CF123E90214F8147009B0994 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF123E8E214F8147009B0994 /* LaunchScreen.storyboard */; };
+		CF3BE1C12171CC10006365E8 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3BE1C02171CC10006365E8 /* CreateViewController.swift */; };
 		CF435471215FE671003553CE /* suggestedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF43546F215FE671003553CE /* suggestedTableViewCell.swift */; };
 		CF435472215FE671003553CE /* SuggestedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF435470215FE671003553CE /* SuggestedTableViewCell.xib */; };
 		CF435475215FECCC003553CE /* SuggestedHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF435474215FECCC003553CE /* SuggestedHeaderView.swift */; };
 		CF435477215FECE9003553CE /* SuggestedHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF435476215FECE9003553CE /* SuggestedHeaderView.xib */; };
 		CF6E08DE2156EEC900790C92 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6E08DC2156EEC900790C92 /* SearchViewController.swift */; };
 		CF6E08DF2156EEC900790C92 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF6E08DD2156EEC900790C92 /* SearchViewController.xib */; };
-		CF9675DA2158B0100074CF72 /* test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF9675D92158B0100074CF72 /* test.storyboard */; };
 		CFA7E9212159833200100038 /* SearchItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA7E91F2159833200100038 /* SearchItemViewCell.swift */; };
 		CFA7E9222159833200100038 /* SearchItemViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFA7E9202159833200100038 /* SearchItemViewCell.xib */; };
 		CFA7E92D21598C6900100038 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFA7E92C21598C6900100038 /* HeaderView.xib */; };
@@ -44,13 +44,13 @@
 		CF123E8C214F8147009B0994 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF123E8F214F8147009B0994 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF123E91214F8147009B0994 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF3BE1C02171CC10006365E8 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		CF43546F215FE671003553CE /* suggestedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = suggestedTableViewCell.swift; sourceTree = "<group>"; };
 		CF435470215FE671003553CE /* SuggestedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestedTableViewCell.xib; sourceTree = "<group>"; };
 		CF435474215FECCC003553CE /* SuggestedHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedHeaderView.swift; sourceTree = "<group>"; };
 		CF435476215FECE9003553CE /* SuggestedHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestedHeaderView.xib; sourceTree = "<group>"; };
 		CF6E08DC2156EEC900790C92 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		CF6E08DD2156EEC900790C92 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
-		CF9675D92158B0100074CF72 /* test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = test.storyboard; sourceTree = "<group>"; };
 		CFA7E91F2159833200100038 /* SearchItemViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemViewCell.swift; sourceTree = "<group>"; };
 		CFA7E9202159833200100038 /* SearchItemViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchItemViewCell.xib; sourceTree = "<group>"; };
 		CFA7E92C21598C6900100038 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
@@ -114,7 +114,6 @@
 				CF123E8C214F8147009B0994 /* Assets.xcassets */,
 				CF123E8E214F8147009B0994 /* LaunchScreen.storyboard */,
 				CF123E91214F8147009B0994 /* Info.plist */,
-				CF9675D92158B0100074CF72 /* test.storyboard */,
 			);
 			path = MediumClone;
 			sourceTree = "<group>";
@@ -124,6 +123,14 @@
 			children = (
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		CF3BE1BF2171CBC5006365E8 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				CF3BE1C02171CC10006365E8 /* CreateViewController.swift */,
+			);
+			path = Create;
 			sourceTree = "<group>";
 		};
 		CF43546E215FE640003553CE /* SuggestedCell */ = {
@@ -218,6 +225,7 @@
 				CFD653032150D1B4008C722B /* Home */,
 				CF6E08DB2156EDF000790C92 /* Search */,
 				CFD653082150D23A008C722B /* Bookmark */,
+				CF3BE1BF2171CBC5006365E8 /* Create */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -319,7 +327,6 @@
 				CF435477215FECE9003553CE /* SuggestedHeaderView.xib in Resources */,
 				CFA7E9222159833200100038 /* SearchItemViewCell.xib in Resources */,
 				CFD6530D2150D3DB008C722B /* WideStoryViewCell.xib in Resources */,
-				CF9675DA2158B0100074CF72 /* test.storyboard in Resources */,
 				CF6E08DF2156EEC900790C92 /* SearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,6 +386,7 @@
 				CFA7E9212159833200100038 /* SearchItemViewCell.swift in Sources */,
 				CFCCCAB921521237001C0995 /* CompactStoryCollectionViewCell.swift in Sources */,
 				CFD653052150D1D8008C722B /* HomeViewController.swift in Sources */,
+				CF3BE1C12171CC10006365E8 /* CreateViewController.swift in Sources */,
 				CFCCCABD215214E8001C0995 /* SwipableTableViewCell.swift in Sources */,
 				CFD653072150D226008C722B /* HomeViewModel.swift in Sources */,
 				CF435471215FE671003553CE /* suggestedTableViewCell.swift in Sources */,
