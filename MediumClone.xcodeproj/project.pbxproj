@@ -12,6 +12,7 @@
 		CF123E8B214F8145009B0994 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF123E89214F8145009B0994 /* Main.storyboard */; };
 		CF123E8D214F8147009B0994 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF123E8C214F8147009B0994 /* Assets.xcassets */; };
 		CF123E90214F8147009B0994 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF123E8E214F8147009B0994 /* LaunchScreen.storyboard */; };
+		CF2D8E7C219007150042BFC4 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2D8E7B219007150042BFC4 /* ActivityViewController.swift */; };
 		CF3BE1C12171CC10006365E8 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3BE1C02171CC10006365E8 /* CreateViewController.swift */; };
 		CF435471215FE671003553CE /* suggestedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF43546F215FE671003553CE /* suggestedTableViewCell.swift */; };
 		CF435472215FE671003553CE /* SuggestedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF435470215FE671003553CE /* SuggestedTableViewCell.xib */; };
@@ -44,6 +45,7 @@
 		CF123E8C214F8147009B0994 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF123E8F214F8147009B0994 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF123E91214F8147009B0994 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF2D8E7B219007150042BFC4 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		CF3BE1C02171CC10006365E8 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		CF43546F215FE671003553CE /* suggestedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = suggestedTableViewCell.swift; sourceTree = "<group>"; };
 		CF435470215FE671003553CE /* SuggestedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestedTableViewCell.xib; sourceTree = "<group>"; };
@@ -116,6 +118,14 @@
 				CF123E91214F8147009B0994 /* Info.plist */,
 			);
 			path = MediumClone;
+			sourceTree = "<group>";
+		};
+		CF2D8E7A219006C90042BFC4 /* Activities */ = {
+			isa = PBXGroup;
+			children = (
+				CF2D8E7B219007150042BFC4 /* ActivityViewController.swift */,
+			);
+			path = Activities;
 			sourceTree = "<group>";
 		};
 		CF3BE1BD2171C9AF006365E8 /* Repository */ = {
@@ -221,6 +231,7 @@
 		CFD653022150D1AA008C722B /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				CF2D8E7A219006C90042BFC4 /* Activities */,
 				CFD653092150D38A008C722B /* CommonViews */,
 				CFD653032150D1B4008C722B /* Home */,
 				CF6E08DB2156EDF000790C92 /* Search */,
@@ -388,6 +399,7 @@
 				CFD653052150D1D8008C722B /* HomeViewController.swift in Sources */,
 				CF3BE1C12171CC10006365E8 /* CreateViewController.swift in Sources */,
 				CFCCCABD215214E8001C0995 /* SwipableTableViewCell.swift in Sources */,
+				CF2D8E7C219007150042BFC4 /* ActivityViewController.swift in Sources */,
 				CFD653072150D226008C722B /* HomeViewModel.swift in Sources */,
 				CF435471215FE671003553CE /* suggestedTableViewCell.swift in Sources */,
 			);
