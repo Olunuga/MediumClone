@@ -58,11 +58,6 @@ extension ActivityViewController : UITableViewDelegate, UITableViewDataSource {
 
 class ActivityCell : UITableViewCell {
     
-    let imgUser = UIImageView()
-    let labUerName = UILabel()
-    let labMessage = UILabel()
-    let labTime = UILabel()
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setUpView()
@@ -75,30 +70,33 @@ class ActivityCell : UITableViewCell {
     func setUpView()  {
                let profileView = ProfileContainer()
                let contentSection = ContentSection()
-              // contentSection.setHasContent(true)
-               let label = UILabel()
         
-                label.text = "Somebody followed you"
-        
-                label.translatesAutoresizingMaskIntoConstraints = false
-                profileView.translatesAutoresizingMaskIntoConstraints = false
-                contentSection.translatesAutoresizingMaskIntoConstraints = false
-        
-                //contentView.translatesAutoresizingMaskIntoConstraints = false
-                contentView.addSubview(profileView)
-                contentView.addSubview(contentSection)
+                 let containerView = UIView();
+    
+                 containerView.translatesAutoresizingMaskIntoConstraints = false
+                 profileView.translatesAutoresizingMaskIntoConstraints = false
+                 contentSection.translatesAutoresizingMaskIntoConstraints = false
         
         
+               contentView.addSubview(containerView)
+               containerView.addSubview(profileView)
+               containerView.addSubview(contentSection)
+        
+    
                 NSLayoutConstraint.activate([
-                    profileView.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: 16),
-                    profileView.leftAnchor.constraint(equalTo:  contentView.safeAreaLayoutGuide.leftAnchor, constant: 16),
-                    contentSection.leftAnchor.constraint(equalTo: profileView.rightAnchor, constant: 16),
-                    contentSection.rightAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.rightAnchor, constant: 16),
-                    contentSection.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: 16),
-                    contentSection.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 16),
-                    contentSection.heightAnchor.constraint(equalToConstant: 100)
+                    containerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant : 16),
+                    containerView.rightAnchor.constraint(equalTo: contentView.rightAnchor , constant : -16),
+                    containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant : -16),
+                    containerView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant : 16),
+                    
+                    contentSection.topAnchor.constraint(equalTo: containerView.topAnchor),
+                    contentSection.rightAnchor.constraint(equalTo: containerView.rightAnchor),
+                    contentSection.leftAnchor.constraint(equalTo: profileView.rightAnchor, constant: 8),
+                    contentSection.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+                    
+                    profileView.topAnchor.constraint(equalTo: containerView.topAnchor),
+                    profileView.leftAnchor.constraint(equalTo:  containerView.leftAnchor),
                     ])
-        
     }
 }
 
@@ -116,7 +114,7 @@ class ProfileContainer : UIView {
     let floatingIcon : UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(named: "star")
+        image.image = UIImage(named: "circle")
         return image
     }()
     
@@ -135,14 +133,12 @@ class ProfileContainer : UIView {
         self.addSubview(profileImage)
         self.addSubview(floatingIcon)
         
-        let verticalConstraint = NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0(20)]|", options: .alignAllCenterX, metrics: nil,  views: ["v0" : profileImage])
-        let horizontalConstraint = NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0(20)]|", options: .alignAllCenterX, metrics: nil,  views: ["v0" : profileImage])
+        let verticalConstraint = NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0(30)]|", options: .alignAllCenterX, metrics: nil,  views: ["v0" : profileImage])
+        let horizontalConstraint = NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0(30)]|", options: .alignAllCenterX, metrics: nil,  views: ["v0" : profileImage])
         
         NSLayoutConstraint.activate([
-            profileImage.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            profileImage.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            floatingIcon.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 4),
-            floatingIcon.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 4)
+            floatingIcon.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 2),
+            floatingIcon.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 2)
             ])
         
     
@@ -152,6 +148,8 @@ class ProfileContainer : UIView {
        
     }
 }
+
+
 
 class ContentSection : UIView {
     var hasContent : Bool = false
@@ -167,9 +165,10 @@ class ContentSection : UIView {
     let action : UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-         label.text = "clapped for"
+        label.text = "clapped for"
         label.textColor = UIColor.gray
-         label.font = UIFont.systemFont(ofSize: 12)
+        label.textAlignment = NSTextAlignment.left
+        label.font = UIFont.systemFont(ofSize: 12)
         return label
     }()
     
@@ -178,8 +177,8 @@ class ContentSection : UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 14)
         label.numberOfLines = 0
-        label.lineBreakMode = NSLineBreakMode.byWordWrapping
-        label.text = "make this a bit cleaner, this is meant to be a long text that spans down the lane"
+        label.lineBreakMode = .byWordWrapping
+        label.text = "make this a bit cleaner, this is a long long long omgn one tme stuff"
         return label
     }()
     
@@ -190,13 +189,6 @@ class ContentSection : UIView {
         label.textColor = UIColor.gray
         label.text = "28 May"
         return label
-    }()
-    
-    let icon : UIImageView = {
-        let image = UIImageView()
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(named: "star")
-        return image
     }()
     
     override init(frame: CGRect) {
@@ -213,6 +205,7 @@ class ContentSection : UIView {
     }
     
     
+    
     func setupViews(){
         self.addSubview(userLabel)
         self.addSubview(action)
@@ -222,22 +215,21 @@ class ContentSection : UIView {
         
         NSLayoutConstraint.activate([
             userLabel.topAnchor.constraint(equalTo: self.topAnchor),
-            userLabel.leftAnchor.constraint(equalTo: self.leftAnchor),
-            userLabel.heightAnchor.constraint(equalToConstant: 12),
+            userLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             
-            action.leftAnchor.constraint(equalTo: userLabel.rightAnchor, constant: 5),
             action.topAnchor.constraint(equalTo: self.topAnchor),
-            action.heightAnchor.constraint(equalToConstant: 12),
+            action.leadingAnchor.constraint(equalTo: userLabel.trailingAnchor, constant : 5),
             
-            content.topAnchor.constraint(greaterThanOrEqualToSystemSpacingBelow: userLabel.bottomAnchor, multiplier: 1),
-            content.leftAnchor.constraint(equalTo: self.leftAnchor),
-            content.rightAnchor.constraint(equalTo: self.rightAnchor),
+            content.topAnchor.constraint(equalTo: userLabel.bottomAnchor,  constant: 5),
+            content.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            content.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             
-            date.leftAnchor.constraint(equalTo: self.leftAnchor),
-            date.topAnchor.constraint(greaterThanOrEqualToSystemSpacingBelow: content.bottomAnchor, multiplier: 1),
-            date.rightAnchor.constraint(lessThanOrEqualToSystemSpacingAfter: self.rightAnchor, multiplier: 16),
-            date.heightAnchor.constraint(equalToConstant: 12)
+            date.topAnchor.constraint(equalTo: content.bottomAnchor, constant: 5),
+            date.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            date.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            date.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             ])
+    
     }
     
    
