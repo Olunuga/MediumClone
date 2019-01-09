@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		207F24140296BF99A0148C5C /* Pods_MediumClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2800CEA7BB808415F862E5EB /* Pods_MediumClone.framework */; };
+		CF10C6E021E5CD3C000C82DA /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF10C6DF21E5CD3C000C82DA /* ActivityCell.swift */; };
 		CF123E86214F8145009B0994 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF123E85214F8145009B0994 /* AppDelegate.swift */; };
 		CF123E8B214F8145009B0994 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF123E89214F8145009B0994 /* Main.storyboard */; };
 		CF123E8D214F8147009B0994 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF123E8C214F8147009B0994 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 		0E4458E8E6003CC34D899756 /* Pods-MediumClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediumClone.release.xcconfig"; path = "Pods/Target Support Files/Pods-MediumClone/Pods-MediumClone.release.xcconfig"; sourceTree = "<group>"; };
 		2800CEA7BB808415F862E5EB /* Pods_MediumClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediumClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C3CA96C39AB2C4E6560FCEC /* Pods-MediumClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediumClone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MediumClone/Pods-MediumClone.debug.xcconfig"; sourceTree = "<group>"; };
+		CF10C6DF21E5CD3C000C82DA /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		CF123E82214F8145009B0994 /* MediumClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediumClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF123E85214F8145009B0994 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF123E8A214F8145009B0994 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				CF2D8E7B219007150042BFC4 /* ActivityViewController.swift */,
+				CF10C6DF21E5CD3C000C82DA /* ActivityCell.swift */,
 			);
 			path = Activities;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 				CFC1AFAA21640800003DCE1F /* BookmarkViewController.swift in Sources */,
 				CF123E86214F8145009B0994 /* AppDelegate.swift in Sources */,
 				CFA7E9212159833200100038 /* SearchItemViewCell.swift in Sources */,
+				CF10C6E021E5CD3C000C82DA /* ActivityCell.swift in Sources */,
 				CFCCCAB921521237001C0995 /* CompactStoryCollectionViewCell.swift in Sources */,
 				CFD653052150D1D8008C722B /* HomeViewController.swift in Sources */,
 				CF3BE1C12171CC10006365E8 /* CreateViewController.swift in Sources */,
