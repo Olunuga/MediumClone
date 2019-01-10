@@ -14,6 +14,8 @@
 		CF123E8D214F8147009B0994 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF123E8C214F8147009B0994 /* Assets.xcassets */; };
 		CF123E90214F8147009B0994 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF123E8E214F8147009B0994 /* LaunchScreen.storyboard */; };
 		CF2D8E7C219007150042BFC4 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2D8E7B219007150042BFC4 /* ActivityViewController.swift */; };
+		CF3619EB21E7034A00B4C7C4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3619EA21E7034A00B4C7C4 /* ProfileViewController.swift */; };
+		CF3619EE21E7189600B4C7C4 /* ProfileDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3619ED21E7189600B4C7C4 /* ProfileDetailCell.swift */; };
 		CF3BE1C12171CC10006365E8 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3BE1C02171CC10006365E8 /* CreateViewController.swift */; };
 		CF435471215FE671003553CE /* suggestedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF43546F215FE671003553CE /* suggestedTableViewCell.swift */; };
 		CF435472215FE671003553CE /* SuggestedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF435470215FE671003553CE /* SuggestedTableViewCell.xib */; };
@@ -48,6 +50,8 @@
 		CF123E8F214F8147009B0994 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF123E91214F8147009B0994 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF2D8E7B219007150042BFC4 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		CF3619EA21E7034A00B4C7C4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		CF3619ED21E7189600B4C7C4 /* ProfileDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailCell.swift; sourceTree = "<group>"; };
 		CF3BE1C02171CC10006365E8 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		CF43546F215FE671003553CE /* suggestedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = suggestedTableViewCell.swift; sourceTree = "<group>"; };
 		CF435470215FE671003553CE /* SuggestedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestedTableViewCell.xib; sourceTree = "<group>"; };
@@ -129,6 +133,23 @@
 				CF10C6DF21E5CD3C000C82DA /* ActivityCell.swift */,
 			);
 			path = Activities;
+			sourceTree = "<group>";
+		};
+		CF3619E921E7029F00B4C7C4 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CF3619EC21E717DE00B4C7C4 /* Cell */,
+				CF3619EA21E7034A00B4C7C4 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		CF3619EC21E717DE00B4C7C4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CF3619ED21E7189600B4C7C4 /* ProfileDetailCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		CF3BE1BD2171C9AF006365E8 /* Repository */ = {
@@ -234,6 +255,7 @@
 		CFD653022150D1AA008C722B /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				CF3619E921E7029F00B4C7C4 /* Profile */,
 				CF2D8E7A219006C90042BFC4 /* Activities */,
 				CFD653092150D38A008C722B /* CommonViews */,
 				CFD653032150D1B4008C722B /* Home */,
@@ -395,8 +417,10 @@
 				CFA7E92F21598D8B00100038 /* HeaderView.swift in Sources */,
 				CF6E08DE2156EEC900790C92 /* SearchViewController.swift in Sources */,
 				CF435475215FECCC003553CE /* SuggestedHeaderView.swift in Sources */,
+				CF3619EE21E7189600B4C7C4 /* ProfileDetailCell.swift in Sources */,
 				CFC1AFAA21640800003DCE1F /* BookmarkViewController.swift in Sources */,
 				CF123E86214F8145009B0994 /* AppDelegate.swift in Sources */,
+				CF3619EB21E7034A00B4C7C4 /* ProfileViewController.swift in Sources */,
 				CFA7E9212159833200100038 /* SearchItemViewCell.swift in Sources */,
 				CF10C6E021E5CD3C000C82DA /* ActivityCell.swift in Sources */,
 				CFCCCAB921521237001C0995 /* CompactStoryCollectionViewCell.swift in Sources */,

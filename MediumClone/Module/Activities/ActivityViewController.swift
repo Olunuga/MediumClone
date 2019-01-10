@@ -20,7 +20,7 @@ class ActivityViewController: UIViewController, FollowButtonPressedDelegate {
     let tableView = UITableView()
     
     override func viewDidLoad() {
-        
+        navigationController?.title = "Activities"
         tableView.register(ActivityCell.self, forCellReuseIdentifier: "cell")
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 240
@@ -49,6 +49,9 @@ class ActivityViewController: UIViewController, FollowButtonPressedDelegate {
     func rowPressed(index: Int) {
         //TODO: open user profile or content
         print("Row \(index) was clicked")
+        let profileViewController = ProfileViewController()
+        self.navigationController?.pushViewController(profileViewController, animated: true)
+        
     }
     
 }
@@ -60,6 +63,7 @@ extension ActivityViewController : UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ActivityCell
         cell.setDelegate(delegate: self)
         cell.setIndex(index: indexPath.row)
+        cell.selectionStyle = .none
         return cell
     }
     
