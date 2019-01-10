@@ -107,7 +107,7 @@
             </objects>
             <point key="canvasLocation" x="873" y="52"/>
         </scene>
-        <!--Activiites-->
+        <!--Activity View Controller-->
         <scene sceneID="tZh-rt-4s9">
             <objects>
                 <viewController id="lvt-RC-Nwk" customClass="ActivityViewController" customModule="MediumClone" customModuleProvider="target" sceneMemberID="viewController">
@@ -126,7 +126,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Y1s-Aj-H4O"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Activiites" id="u15-LX-emZ"/>
+                    <navigationItem key="navigationItem" id="u15-LX-emZ"/>
                     <connections>
                         <outlet property="navBar" destination="0hd-Dk-ulw" id="uof-l3-cmj"/>
                     </connections>

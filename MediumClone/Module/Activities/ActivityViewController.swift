@@ -20,7 +20,7 @@ class ActivityViewController: UIViewController, FollowButtonPressedDelegate {
     let tableView = UITableView()
     
     override func viewDidLoad() {
-        navigationController?.title = "Activities"
+        self.navigationController?.navigationBar.topItem?.title = "Activities"
         tableView.register(ActivityCell.self, forCellReuseIdentifier: "cell")
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 240
