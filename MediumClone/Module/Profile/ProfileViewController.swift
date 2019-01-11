@@ -15,11 +15,13 @@ class ProfileViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = UIColor.black
         
         tableView.register(ActivityCell.self, forCellReuseIdentifier: "cell")
-         tableView.register(ProfileDetailCell.self, forCellReuseIdentifier: "profileDetailCell")
+        tableView.register(ProfileDetailCell.self, forCellReuseIdentifier: "profileDetailCell")
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.delegate = self
         tableView.dataSource = self
-//        tableView.separatorColor = UIColor(white: 0.5, alpha: 0.3)
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 240
+        //        tableView.separatorColor = UIColor(white: 0.5, alpha: 0.3)
         
         setUpViews()
     }

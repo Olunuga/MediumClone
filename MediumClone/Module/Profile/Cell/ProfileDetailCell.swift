@@ -10,6 +10,7 @@ import UIKit
 
 class ProfileDetailCell : UITableViewCell{
     
+    let debug = false;
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -23,12 +24,13 @@ class ProfileDetailCell : UITableViewCell{
     func setUpViews(){
         let rightColumn = UIView()
         let leftColumn = UIView()
+        let mainView = UIView();
         
         let followerBox = UIView()
         let count : UILabel = {
             let label = UILabel()
             label.text = "5.81k"
-            label.font = UIFont.systemFont(ofSize: 13)
+            label.font = UIFont.systemFont(ofSize: 12)
             label.translatesAutoresizingMaskIntoConstraints = false
             return label
         }()
@@ -37,7 +39,8 @@ class ProfileDetailCell : UITableViewCell{
             let label = UILabel()
             label.translatesAutoresizingMaskIntoConstraints = false
             label.text = "Following"
-            label.font = UIFont.systemFont(ofSize: 13)
+            label.textColor = UIColor.gray
+            label.font = UIFont.systemFont(ofSize: 12)
             return label
         }()
         
@@ -56,10 +59,10 @@ class ProfileDetailCell : UITableViewCell{
         
         let profileDec = UIView()
         profileDec.translatesAutoresizingMaskIntoConstraints = false
-        //profileDec.backgroundColor = UIColor.purple
+        profileDec.backgroundColor = debug ? UIColor.purple : UIColor.white
         let profileName : UILabel = {
             let label = UILabel()
-            label.font = UIFont.systemFont(ofSize: 15)
+            label.font = UIFont.boldSystemFont(ofSize: 15)
             label.text = "John Cousins"
             label.translatesAutoresizingMaskIntoConstraints = false
             return label
@@ -67,8 +70,8 @@ class ProfileDetailCell : UITableViewCell{
         
         let dateJoined : UILabel = {
             let label = UILabel()
-             label.textColor = UIColor.green
-            label.font = UIFont.systemFont(ofSize: 15)
+            label.textColor =  UIColor.init(red: 3/255, green: 168/255, blue: 124/255, alpha: 1.0)
+            label.font = UIFont.systemFont(ofSize: 13)
             label.text = "Member since july 2018"
             label.translatesAutoresizingMaskIntoConstraints = false
             return label
@@ -78,8 +81,10 @@ class ProfileDetailCell : UITableViewCell{
             let label = UILabel()
             label.text = "Distilling business ideas. I write down my thoughts so others can understand my logic and help improve it. Get free biz books http://eepurl.com/b8UzpL"
             label.numberOfLines = 0
-            label.font = UIFont.systemFont(ofSize: 14)
+            label.textAlignment = .justified
+            label.font = UIFont.systemFont(ofSize: 13)
             label.lineBreakMode = .byWordWrapping
+            label.textColor = UIColor.gray
             label.translatesAutoresizingMaskIntoConstraints = false
             return label
         }()
@@ -93,29 +98,72 @@ class ProfileDetailCell : UITableViewCell{
         followerBox.addSubview(desc)
         
         rightColumn.translatesAutoresizingMaskIntoConstraints = false
-        //rightColumn.backgroundColor = UIColor.yellow
+        rightColumn.backgroundColor = debug ? UIColor.yellow : UIColor.white
         
         leftColumn.translatesAutoresizingMaskIntoConstraints = false
-        //leftColumn.backgroundColor = UIColor.green
+        leftColumn.backgroundColor =  debug ? UIColor.green : UIColor.white
+        
+        mainView.translatesAutoresizingMaskIntoConstraints = false;
         
         profileImage.translatesAutoresizingMaskIntoConstraints = false
         
         followerBox.translatesAutoresizingMaskIntoConstraints = false
-        //followerBox.backgroundColor = UIColor.red
+        followerBox.backgroundColor = debug ? UIColor.red : UIColor.white
         
         
         
-        contentView.addSubview(rightColumn)
-        contentView.addSubview(leftColumn)
+        contentView.addSubview(mainView)
+        
+        let mainTop = mainView.topAnchor.constraint(equalTo: contentView.topAnchor, constant : 16)
+        mainTop.identifier = "main top"
+        let mainTrailing = mainView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor , constant : -16)
+        mainTrailing.identifier = "main trailing"
+        
+        let mainBottom = mainView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant : -16)
+        mainBottom.identifier = "main bootom"
+        
+        let mainLeading = mainView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor , constant : 16)
+        mainLeading.identifier = "main leading"
+        
+        mainView.addSubview(rightColumn)
+        mainView.addSubview(leftColumn)
         
         rightColumn.addSubview(profileDec)
+        
         profileDec.addSubview(profileName)
-         profileDec.addSubview(dateJoined)
-         profileDec.addSubview(about)
+        profileDec.addSubview(dateJoined)
+        profileDec.addSubview(about)
         
         leftColumn.addSubview(profileImage)
         leftColumn.addSubview(followerBox)
         
+        
+        
+        let bottomBlock = UIView();
+        bottomBlock.translatesAutoresizingMaskIntoConstraints = false;
+        
+        let settingsIcon : UIImageView = {
+            let imageView = UIImageView();
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+            imageView.image = UIImage(named: "gear")
+            return imageView
+        }()
+        
+        let followButton : UIButton = {
+            let button : UIButton = UIButton()
+            button.setTitle("Following", for: .normal)
+            button.translatesAutoresizingMaskIntoConstraints = false
+            button.setTitleColor(UIColor.white, for: .normal)
+            button.backgroundColor = UIColor.init(red: 3/255, green: 168/255, blue: 124/255, alpha: 1.0)
+            button.contentEdgeInsets = UIEdgeInsets.init(top: 8, left: 13, bottom: 8, right: 13)
+            button.titleLabel?.font = UIFont.systemFont(ofSize: 11)
+            button.layer.cornerRadius = 3
+            return button
+        }()
+        
+        
+        bottomBlock.addSubview(settingsIcon)
+        bottomBlock.addSubview(followButton)
         
         
         
@@ -124,12 +172,12 @@ class ProfileDetailCell : UITableViewCell{
         
         
         let followerBox2 = UIView()
-        //ollowerBox2.backgroundColor = UIColor.brown
+        followerBox2.backgroundColor =  debug ? UIColor.brown : UIColor.white
         followerBox2.translatesAutoresizingMaskIntoConstraints = false
         let count2 : UILabel = {
             let label = UILabel()
             label.text = "5.81k"
-            label.font = UIFont.systemFont(ofSize: 13)
+            label.font = UIFont.systemFont(ofSize: 12)
             label.translatesAutoresizingMaskIntoConstraints = false
             return label
         }()
@@ -138,48 +186,63 @@ class ProfileDetailCell : UITableViewCell{
             let label = UILabel()
             label.translatesAutoresizingMaskIntoConstraints = false
             label.text = "Followers"
-            label.font = UIFont.systemFont(ofSize: 13)
+            label.font = UIFont.systemFont(ofSize: 12)
+            label.textColor = UIColor.gray
             return label
         }()
         
+        rightColumn.addSubview(followerBox2)
         followerBox2.addSubview(count2)
         followerBox2.addSubview(desc2)
         
-        rightColumn.addSubview(followerBox2)
+        rightColumn.addSubview(bottomBlock)
         
         
-    
+        
+        
+        let rcLead = rightColumn.leadingAnchor.constraint(equalTo: leftColumn.trailingAnchor)
+        rcLead.identifier = "Right column leading"
+        
+        let rcTrail =  rightColumn.trailingAnchor.constraint(equalTo: mainView.trailingAnchor)
+        rcTrail.identifier = "Right column trailing"
+        
+        let rcTop = rightColumn.topAnchor.constraint(equalTo: mainView.topAnchor)
+        rcTop.identifier = "RC top"
+        
+        let rcBottom = rightColumn.bottomAnchor.constraint(equalTo: mainView.bottomAnchor)
+        rcBottom.identifier = "Rc Bottom"
+        
+        let rcHeigh = rightColumn.heightAnchor.constraint(equalToConstant: 160)
+        rcHeigh.identifier = "Rc Height"
         
         NSLayoutConstraint.activate([
-            leftColumn.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            leftColumn.topAnchor.constraint(equalTo: contentView.topAnchor),
-            leftColumn.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            mainTop,mainTrailing,mainBottom,mainLeading,
+            
+            leftColumn.leadingAnchor.constraint(equalTo: mainView.leadingAnchor),
+            leftColumn.topAnchor.constraint(equalTo: mainView.topAnchor),
+            leftColumn.bottomAnchor.constraint(equalTo: mainView.bottomAnchor),
             leftColumn.widthAnchor.constraint(equalToConstant: 90),
             
             profileImage.heightAnchor.constraint(equalToConstant: 60),
             profileImage.widthAnchor.constraint(equalToConstant: 60),
             profileImage.topAnchor.constraint(equalTo: leftColumn.topAnchor),
-            profileImage.centerXAnchor.constraint(equalTo: leftColumn.centerXAnchor),
+            profileImage.leadingAnchor.constraint(equalTo: leftColumn.leadingAnchor),
+            //profileImage.bottomAnchor.constraint(equalTo: followerBox.topAnchor),
             
             
-            followerBox.leadingAnchor.constraint(equalTo: leftColumn.leadingAnchor, constant:16),
+            followerBox.leadingAnchor.constraint(equalTo: leftColumn.leadingAnchor),
             followerBox.trailingAnchor.constraint(equalTo: leftColumn.trailingAnchor),
-            followerBox.bottomAnchor.constraint(equalTo: leftColumn.bottomAnchor, constant: -5),
+            followerBox.bottomAnchor.constraint(equalTo: leftColumn.bottomAnchor),
             followerBox.heightAnchor.constraint(equalToConstant: 40),
             
             count.bottomAnchor.constraint(equalTo: desc.topAnchor),
             count.leadingAnchor.constraint(equalTo: followerBox.leadingAnchor),
             
-            desc.bottomAnchor.constraint(equalTo: followerBox.bottomAnchor),
+            desc.bottomAnchor.constraint(equalTo: followerBox.bottomAnchor , constant: -5),
             desc.leadingAnchor.constraint(equalTo: followerBox.leadingAnchor),
             
             
-            
-            rightColumn.leadingAnchor.constraint(equalTo: leftColumn.trailingAnchor, constant: 10),
-            rightColumn.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            rightColumn.topAnchor.constraint(equalTo: contentView.topAnchor),
-            rightColumn.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            rightColumn.heightAnchor.constraint(equalToConstant: 160),
+            rcLead,rcTrail,rcBottom,rcTop,
             
             profileDec.topAnchor.constraint(equalTo: rightColumn.topAnchor),
             profileDec.leadingAnchor.constraint(equalTo: rightColumn.leadingAnchor),
@@ -190,26 +253,41 @@ class ProfileDetailCell : UITableViewCell{
             profileName.leadingAnchor.constraint(equalTo: profileDec.leadingAnchor),
             profileName.trailingAnchor.constraint(equalTo: profileDec.trailingAnchor),
             
-            dateJoined.topAnchor.constraint(equalTo: profileName.bottomAnchor, constant: 5),
+            dateJoined.topAnchor.constraint(equalTo: profileName.bottomAnchor, constant: 3),
             dateJoined.leadingAnchor.constraint(equalTo: profileDec.leadingAnchor),
             dateJoined.trailingAnchor.constraint(equalTo: profileDec.trailingAnchor),
             
-            about.topAnchor.constraint(equalTo: dateJoined.bottomAnchor, constant: 5),
+            about.topAnchor.constraint(equalTo: dateJoined.bottomAnchor, constant:3),
             about.leadingAnchor.constraint(equalTo: profileDec.leadingAnchor),
             about.trailingAnchor.constraint(equalTo: profileDec.trailingAnchor),
+            about.bottomAnchor.constraint(equalTo: profileDec.bottomAnchor, constant: -5),
             
-            
-            followerBox2.topAnchor.constraint(equalTo: profileDec.bottomAnchor),
             followerBox2.leadingAnchor.constraint(equalTo: rightColumn.leadingAnchor),
-            followerBox2.trailingAnchor.constraint(equalTo: rightColumn.trailingAnchor),
-            followerBox2.bottomAnchor.constraint(equalTo: rightColumn.bottomAnchor, constant: -5),
+            //followerBox2.trailingAnchor.constraint(equalTo: rightColumn.trailingAnchor),
+            followerBox2.bottomAnchor.constraint(equalTo: rightColumn.bottomAnchor),
             followerBox2.heightAnchor.constraint(equalToConstant: 40),
             
             count2.bottomAnchor.constraint(equalTo: desc2.topAnchor),
             count2.leadingAnchor.constraint(equalTo: followerBox2.leadingAnchor),
             
-            desc2.bottomAnchor.constraint(equalTo: followerBox2.bottomAnchor),
+            desc2.bottomAnchor.constraint(equalTo: followerBox2.bottomAnchor, constant: -4),
             desc2.leadingAnchor.constraint(equalTo: followerBox2.leadingAnchor),
+            
+            
+            bottomBlock.leadingAnchor.constraint(equalTo: followerBox2.trailingAnchor),
+            bottomBlock.trailingAnchor.constraint(equalTo: rightColumn.trailingAnchor),
+            bottomBlock.bottomAnchor.constraint(equalTo: rightColumn.bottomAnchor),
+            bottomBlock.heightAnchor.constraint(equalToConstant: 40),
+            
+            //settingsIcon.bottomAnchor.constraint(equalTo: bottomBlock.bottomAnchor),
+            settingsIcon.centerYAnchor.constraint(equalTo: bottomBlock.centerYAnchor),
+            settingsIcon.trailingAnchor.constraint(equalTo: followButton.leadingAnchor, constant : -15),
+            settingsIcon.heightAnchor.constraint(equalToConstant: 20),
+            settingsIcon.widthAnchor.constraint(equalToConstant: 20),
+            
+            followButton.centerYAnchor.constraint(equalTo: bottomBlock.centerYAnchor),
+            followButton.trailingAnchor.constraint(equalTo: bottomBlock.trailingAnchor),
+            
             ])
     }
 }
