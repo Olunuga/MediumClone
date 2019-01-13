@@ -9,53 +9,83 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-    let tableView =  UITableView()
+    let scrollView =  UIScrollView()
+    let profileDetailView = ProfileDetailView()
+
     
     override func viewDidLoad() {
         self.navigationController?.navigationBar.tintColor = UIColor.black
         
-        tableView.register(ActivityCell.self, forCellReuseIdentifier: "cell")
-        tableView.register(ProfileDetailCell.self, forCellReuseIdentifier: "profileDetailCell")
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 240
-        //        tableView.separatorColor = UIColor(white: 0.5, alpha: 0.3)
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.delegate = self
         
-        setUpViews()
+        //ProfileDetail View
+        profileDetailView.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+         //CollectionView
+        let layoutParam = UICollectionViewFlowLayout.init()
+        layoutParam.scrollDirection = .horizontal
+        
+        let collectionView = UICollectionView(frame: CGRect(x: 0, y: profileDetailView.frame.height, width: view.frame.width, height: view.frame.height - profileDetailView.frame.height), collectionViewLayout: layoutParam)
+        
+        collectionView.translatesAutoresizingMaskIntoConstraints = false;
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(ProfileSectionCell.self, forCellWithReuseIdentifier: "cellId")
+        collectionView.isPagingEnabled = true
+        
+        setUpViews(collectionView: collectionView)
     }
     
-    func setUpViews(){
-        
-        view.backgroundColor = UIColor.white
+    func setUpViews(collectionView : UICollectionView){
         let safeArea = view.safeAreaLayoutGuide
-        view.addSubview(tableView)
+        view.backgroundColor = UIColor.white
+        
+        view.addSubview(scrollView)
+        scrollView.addSubview(profileDetailView)
+        scrollView.addSubview(collectionView)
+        
         
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: safeArea.topAnchor),
-            tableView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
-            tableView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor)
+            scrollView.topAnchor.constraint(equalTo: safeArea.topAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
+            
+            profileDetailView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            profileDetailView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
+            profileDetailView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
+            
+            collectionView.topAnchor.constraint(equalTo: profileDetailView.bottomAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor)
             ])
         
     }
     
 }
 
-extension ProfileViewController : UITableViewDataSource, UITableViewDelegate {
+extension ProfileViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let otherCell =  tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ActivityCell
-        
-        let profileDetailCell =  tableView.dequeueReusableCell(withIdentifier: "profileDetailCell", for: indexPath) as! ProfileDetailCell
-        
-        
-        return indexPath.row == 0 ? profileDetailCell : otherCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! ProfileSectionCell
+        cell.backgroundColor = indexPath.item % 2 == 0 ? UIColor.green : UIColor.red
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.frame.width, height: view.frame.height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
 }
+
+

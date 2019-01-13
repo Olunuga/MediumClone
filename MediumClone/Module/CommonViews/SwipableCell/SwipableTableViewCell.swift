@@ -26,6 +26,7 @@ class SwipableTableViewCell: UITableViewCell {
         // Initialization code
         collectionView?.dataSource = self
         collectionView?.delegate = self
+        collectionView?.isPagingEnabled = true
         collectionView?.register(UINib(nibName: "CompactStoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "compactCell")
     }
     
@@ -75,7 +76,8 @@ extension SwipableTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 10)
+       
+        return UIEdgeInsets(top: 5, left: (contentView.frame.width-300)/2, bottom: 5, right: (contentView.frame.width-300)/2)
     }
   
 }
