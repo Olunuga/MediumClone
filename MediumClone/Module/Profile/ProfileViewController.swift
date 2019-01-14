@@ -32,8 +32,9 @@ class ProfileViewController: UIViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false;
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(ProfileSectionCell.self, forCellWithReuseIdentifier: "cellId")
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellId")
         collectionView.isPagingEnabled = true
+        collectionView.autoresizesSubviews = true
         
         setUpViews(collectionView: collectionView)
     }
@@ -69,22 +70,49 @@ class ProfileViewController: UIViewController {
 
 extension ProfileViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! ProfileSectionCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)
         cell.backgroundColor = indexPath.item % 2 == 0 ? UIColor.green : UIColor.red
+        
+        let profile = ProfileSectionCell()
+        profile.setProtocol(ourProtocol: self)
+        profile.translatesAutoresizingMaskIntoConstraints = false
+         cell.addSubview(profile)
+
+        NSLayoutConstraint.activate([
+            profile.topAnchor.constraint(equalTo: cell.contentView.topAnchor),
+            profile.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor),
+            profile.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor),
+            profile.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor)
+            ])
+
+       
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
         return CGSize(width: view.frame.width, height: view.frame.height)
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+}
+
+extension ProfileViewController:  TableOnScrollProtocol{
+    func aboutToStartScrolling() {
+        
+    }
+    
+    func scrolling(point: CGPoint) {
+       scrollView.setContentOffset(point, animated: true)
     }
 }
 
