@@ -8,13 +8,12 @@
 
 import UIKit
 
-class ProfileDetailView: UIView{
+class ProfileDetailView: UICollectionReusableView{
     
      let debug = false;
     
-    
     override init(frame: CGRect) {
-        super.init(frame: frame)
+        super.init(frame:frame)
         setUpViews()
     }
     
