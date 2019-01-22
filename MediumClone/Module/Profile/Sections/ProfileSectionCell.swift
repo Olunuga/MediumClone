@@ -23,12 +23,7 @@ class ProfileSectionCell : UIView{
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 240
-        tableView.isScrollEnabled = true
-        
-       
-        profileDetailView.translatesAutoresizingMaskIntoConstraints = false
-        
-        tableView.tableHeaderView = profileDetailView
+        tableView.isScrollEnabled = false
         
         setUpViews()
     }
@@ -64,9 +59,6 @@ class ProfileSectionCell : UIView{
             tableView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
-            
-            profileDetailView.trailingAnchor.constraint(equalTo: tableView.trailingAnchor),
-            profileDetailView.leadingAnchor.constraint(equalTo: tableView.leadingAnchor)
             ])
         
     }

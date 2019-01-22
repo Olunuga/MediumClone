@@ -10,46 +10,80 @@ import UIKit
 
 class ProfileReloaded: UIViewController {
     let profileDetailView = ProfileDetailView()
+    let scrollView = UIScrollView();
     
     
     override func viewDidLoad() {
         self.navigationController?.navigationBar.tintColor = UIColor.black
         //ProfileDetail View
         profileDetailView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let swipeGestureRecognize = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe))
+        swipeGestureRecognize.direction  = .up
+        
+//        let swipeGestureRecognizerDown = UISwipeGestureRecognizer(target: self, action: #selector(handleS))
+//        swipeGestureRecognizerDown.direction  = .down
+        
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
+        
+        self.view.addGestureRecognizer(swipeGestureRecognize)
+        self.view.addGestureRecognizer(panGesture)
         
         
         //CollectionView
         let layoutParam = UICollectionViewFlowLayout.init()
         layoutParam.scrollDirection = .horizontal
-        layoutParam.headerReferenceSize.height = profileDetailView.frame.height
-        layoutParam.headerReferenceSize.width = view.frame.width
         
-       // layoutParam.headerReferenceSize = CGSize(width: view.frame.size.width, height: 100)
-
-        
-        let collectionView = UICollectionView(frame: CGRect(x: 0, y: (self.navigationController?.navigationBar.frame.height)!, width: view.frame.width, height: view.frame.height), collectionViewLayout: layoutParam)
+        let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height), collectionViewLayout: layoutParam)
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false;
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellId")
+        
         collectionView.isPagingEnabled = true
         collectionView.autoresizesSubviews = true
+         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellId")
         
 //        collectionView.register(ProfileDetailView.self, forSupplementaryViewOfKind:UICollectionView.elementKindSectionHeader , withReuseIdentifier: "header")
         
         setUpViews(collectionView: collectionView)
     }
     
+    
+    @objc func handleSwipe(){
+      print("siped up")
+     // scrollView.contentInset = UIEdgeInsets(top: -10, left: 0, bottom: 0, right: 0)
+      
+    }
+    
+    @objc func handlePan(sender:UIPanGestureRecognizer){
+        print("pan")
+        let translation = sender.translation(in: self.view)
+        //let location =  sender.location(in: self.view)
+        print(translation.y)
+        scrollView.contentOffset = CGPoint(x: 0, y: -translation.y)
+    }
+    
     func setUpViews(collectionView : UICollectionView){
         let safeArea = view.safeAreaLayoutGuide
         view.backgroundColor = UIColor.white
-        view.addSubview(collectionView)
+        view.addSubview(scrollView)
+        scrollView.addSubview(profileDetailView)
+        scrollView.addSubview(collectionView)
         
         
         NSLayoutConstraint.activate([
             
-            collectionView.topAnchor.constraint(equalTo: safeArea.topAnchor),
+            scrollView.topAnchor.constraint(equalTo: safeArea.topAnchor),
+            scrollView.rightAnchor.constraint(equalTo: safeArea.rightAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor), scrollView.leftAnchor.constraint(equalTo: safeArea.leftAnchor),
+            
+            profileDetailView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            profileDetailView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
+            profileDetailView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
+            
+            collectionView.topAnchor.constraint(equalTo: profileDetailView.bottomAnchor),
             collectionView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
             collectionView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor)
@@ -86,13 +120,8 @@ extension ProfileReloaded : UICollectionViewDelegate, UICollectionViewDataSource
         return cell
     }
     
-//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//        return collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header", for: indexPath) as! ProfileDetailView
-//    }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        return CGSize(width: view.frame.width, height: view.frame.height)
+        return CGSize(width: view.frame.width, height: view.frame.height + profileDetailView.frame.height)
         
     }
     
