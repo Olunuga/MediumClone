@@ -114,15 +114,15 @@ class ProfileDetailView: UICollectionReusableView{
         
         self.addSubview(mainView)
         
-        let mainTop = mainView.topAnchor.constraint(equalTo: self.topAnchor, constant : 16)
+        let mainTop = mainView.topAnchor.constraint(equalTo: self.topAnchor)
         mainTop.identifier = "main top"
-        let mainTrailing = mainView.trailingAnchor.constraint(equalTo: self.trailingAnchor , constant : -16)
+        let mainTrailing = mainView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         mainTrailing.identifier = "main trailing"
         
-        let mainBottom = mainView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant : -16)
+        let mainBottom = mainView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         mainBottom.identifier = "main bootom"
         
-        let mainLeading = mainView.leadingAnchor.constraint(equalTo: self.leadingAnchor , constant : 16)
+        let mainLeading = mainView.leadingAnchor.constraint(equalTo: self.leadingAnchor)
         mainLeading.identifier = "main leading"
         
         mainView.addSubview(rightColumn)

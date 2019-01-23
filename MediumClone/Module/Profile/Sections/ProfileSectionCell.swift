@@ -12,6 +12,8 @@ class ProfileSectionCell : UIView{
     let tableView =  UITableView()
      let profileDetailView = ProfileDetailView()
     var tableOnScroll: TableOnScrollProtocol? = nil
+    var contentInset:UIEdgeInsets = UIEdgeInsets(top: 110, left: 0, bottom: 0, right: 0)
+    var headerHeight :CGFloat = 200;
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,7 +25,8 @@ class ProfileSectionCell : UIView{
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 240
-        tableView.isScrollEnabled = false
+        tableView.contentInset = contentInset
+        tableView.contentInsetAdjustmentBehavior = .never
         
         setUpViews()
     }
@@ -66,6 +69,14 @@ class ProfileSectionCell : UIView{
     func setProtocol(ourProtocol: TableOnScrollProtocol){
         self.tableOnScroll = ourProtocol
     }
+    
+    func setContentInset(inset: UIEdgeInsets){
+        contentInset = inset;
+    }
+    
+    func setHeaderHeight(height: CGFloat){
+        headerHeight = height;
+    }
 }
 
 extension ProfileSectionCell : UITableViewDelegate , UITableViewDataSource{
@@ -80,21 +91,19 @@ extension ProfileSectionCell : UITableViewDelegate , UITableViewDataSource{
         return otherCell
     }
     
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        tableOnScroll?.aboutToStartScrolling()
-        print("I want to scroll")
-    }
    
     
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        tableOnScroll?.scrolling(point: scrollView.contentOffset)
-//        print("i am scrolling \(scrollView.contentOffset)")
-//    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+         let offset = scrollView.contentOffset.y
+        
+        tableOnScroll?.scrolling(point: offset)
+        print("i am scrolling \(scrollView.contentOffset)")
+    }
 
 }
 
 protocol TableOnScrollProtocol {
     func aboutToStartScrolling()
-    func scrolling(point : CGPoint)
+    func scrolling(point : CGFloat)
     
 }

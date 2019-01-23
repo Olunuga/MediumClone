@@ -15,10 +15,6 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         self.navigationController?.navigationBar.tintColor = UIColor.black
-        
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.delegate = self
-        
         //ProfileDetail View
         profileDetailView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -43,22 +39,16 @@ class ProfileViewController: UIViewController {
         let safeArea = view.safeAreaLayoutGuide
         view.backgroundColor = UIColor.white
         
-        view.addSubview(scrollView)
-        scrollView.addSubview(profileDetailView)
-        scrollView.addSubview(collectionView)
+        view.addSubview(profileDetailView)
+        view.insertSubview(collectionView, belowSubview: profileDetailView)
         
         
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: safeArea.topAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
-            scrollView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
-            
-            profileDetailView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            profileDetailView.topAnchor.constraint(equalTo: safeArea.topAnchor),
             profileDetailView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
             profileDetailView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
             
-            collectionView.topAnchor.constraint(equalTo: profileDetailView.bottomAnchor),
+            collectionView.topAnchor.constraint(equalTo: safeArea.topAnchor),
             collectionView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
             collectionView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor)
@@ -80,9 +70,10 @@ extension ProfileViewController : UICollectionViewDelegate, UICollectionViewData
         cell.backgroundColor = indexPath.item % 2 == 0 ? UIColor.green : UIColor.red
         
         let profile = ProfileSectionCell()
+        profile.setContentInset(inset: UIEdgeInsets(top: 200, left: 0, bottom: 0, right: 0))
         profile.setProtocol(ourProtocol: self)
         profile.translatesAutoresizingMaskIntoConstraints = false
-         cell.addSubview(profile)
+        cell.addSubview(profile)
 
         NSLayoutConstraint.activate([
             profile.topAnchor.constraint(equalTo: cell.contentView.topAnchor),
@@ -111,8 +102,10 @@ extension ProfileViewController:  TableOnScrollProtocol{
         
     }
     
-    func scrolling(point: CGPoint) {
-       scrollView.setContentOffset(point, animated: true)
+    func scrolling(point: CGFloat) {
+      print(point)
+      
+       profileDetailView.frame = CGRect(x: 0, y: -point, width: profileDetailView.frame.width, height: profileDetailView.frame.height)
     }
 }
 
