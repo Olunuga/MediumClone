@@ -49,7 +49,7 @@ class ActivityViewController: UIViewController, FollowButtonPressedDelegate {
     func rowPressed(index: Int) {
         //TODO: open user profile or content
         print("Row \(index) was clicked")
-        let profileViewController = ProfileReloaded()
+        let profileViewController = ProfileViewController()
         self.navigationController?.pushViewController(profileViewController, animated: true)
         
     }

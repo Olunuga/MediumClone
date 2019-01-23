@@ -128,6 +128,7 @@ extension ProfileReloaded : UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
+
 }
 
 extension ProfileReloaded:  TableOnScrollProtocol{
@@ -135,7 +136,7 @@ extension ProfileReloaded:  TableOnScrollProtocol{
         
     }
     
-    func scrolling(point: CGPoint) {
+    func scrolling(point: CGFloat) {
        // scrollView.setContentOffset(point, animated: true)
     }
 }
