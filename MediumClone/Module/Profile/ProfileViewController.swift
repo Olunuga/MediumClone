@@ -11,13 +11,19 @@ import UIKit
 class ProfileViewController: UIViewController {
     let scrollView =  UIScrollView()
     let profileDetailView = ProfileDetailView()
+    var topHeight : CGFloat = 0;
+    var profileViewHeight : CGFloat = 0;
 
     
     override func viewDidLoad() {
         self.navigationController?.navigationBar.tintColor = UIColor.black
+        topHeight = calculateTopHeight()
+        print( "======== stop scroling headerView at \(topHeight)")
         //ProfileDetail View
         profileDetailView.translatesAutoresizingMaskIntoConstraints = false
         
+        self.view.backgroundColor = #colorLiteral(red: 0.9722703223, green: 0.9792027417, blue: 1, alpha: 1)
+
         
          //CollectionView
         let layoutParam = UICollectionViewFlowLayout.init()
@@ -31,8 +37,16 @@ class ProfileViewController: UIViewController {
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellId")
         collectionView.isPagingEnabled = true
         collectionView.autoresizesSubviews = true
+        collectionView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
         setUpViews(collectionView: collectionView)
+    }
+    
+    
+    func calculateTopHeight() ->CGFloat {
+        let barHeight=self.navigationController?.navigationBar.frame.height ?? 0
+        let statusBarHeight = UIApplication.shared.isStatusBarHidden ? CGFloat(0) : UIApplication.shared.statusBarFrame.height
+        return barHeight + statusBarHeight
     }
     
     func setUpViews(collectionView : UICollectionView){
@@ -41,6 +55,8 @@ class ProfileViewController: UIViewController {
         
         view.addSubview(profileDetailView)
         view.insertSubview(collectionView, belowSubview: profileDetailView)
+        
+        profileViewHeight = profileDetailView.frame.height;
         
         
         NSLayoutConstraint.activate([
@@ -53,6 +69,9 @@ class ProfileViewController: UIViewController {
             collectionView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
             collectionView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor)
             ])
+        
+        profileViewHeight = profileDetailView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
+        print("===== Profile View height in setup views \(profileViewHeight)")
         
     }
     
@@ -103,9 +122,11 @@ extension ProfileViewController:  TableOnScrollProtocol{
     }
     
     func scrolling(point: CGFloat) {
-      print(point)
-      
-       profileDetailView.frame = CGRect(x: 0, y: -point, width: profileDetailView.frame.width, height: profileDetailView.frame.height)
+        let realPoint = -point;
+        //Add 32 (total profileView padding size to make it float)
+        if(realPoint < profileViewHeight + topHeight + 32) {
+             profileDetailView.frame = CGRect(x: 0, y: realPoint - topHeight - 32, width: profileDetailView.frame.width, height: profileDetailView.frame.height)
+        }
     }
 }
 

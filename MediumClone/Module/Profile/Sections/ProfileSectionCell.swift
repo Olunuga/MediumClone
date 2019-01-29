@@ -12,8 +12,10 @@ class ProfileSectionCell : UIView{
     let tableView =  UITableView()
      let profileDetailView = ProfileDetailView()
     var tableOnScroll: TableOnScrollProtocol? = nil
-    var contentInset:UIEdgeInsets = UIEdgeInsets(top: 110, left: 0, bottom: 0, right: 0)
+    var contentInset : UIEdgeInsets = UIEdgeInsets(top: 200, left: 0, bottom: 0, right: 0)
+    var contentOffset : UIEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: -200, right: 0)
     var headerHeight :CGFloat = 200;
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,6 +28,7 @@ class ProfileSectionCell : UIView{
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 240
         tableView.contentInset = contentInset
+        tableView.contentOffset = CGPoint(x: 0, y: -200)
         tableView.contentInsetAdjustmentBehavior = .never
         
         setUpViews()
@@ -97,7 +100,7 @@ extension ProfileSectionCell : UITableViewDelegate , UITableViewDataSource{
          let offset = scrollView.contentOffset.y
         
         tableOnScroll?.scrolling(point: offset)
-        print("i am scrolling \(scrollView.contentOffset)")
+        //print("i am scrolling \(scrollView.contentOffset)")
     }
 
 }
