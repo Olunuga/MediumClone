@@ -13,6 +13,9 @@ class ProfileViewController: UIViewController {
     let profileDetailView = ProfileDetailView()
     var topHeight : CGFloat = 0;
     var profileViewHeight : CGFloat = 0;
+    var offSetGanGan:CGFloat = 0.0;
+    var baseOffset : CGFloat = 0.0
+    var statusBarHeight = UIApplication.shared.isStatusBarHidden ? CGFloat(0) : UIApplication.shared.statusBarFrame.height
 
     
     override func viewDidLoad() {
@@ -45,7 +48,6 @@ class ProfileViewController: UIViewController {
     
     func calculateTopHeight() ->CGFloat {
         let barHeight=self.navigationController?.navigationBar.frame.height ?? 0
-        let statusBarHeight = UIApplication.shared.isStatusBarHidden ? CGFloat(0) : UIApplication.shared.statusBarFrame.height
         return barHeight + statusBarHeight
     }
     
@@ -55,8 +57,6 @@ class ProfileViewController: UIViewController {
         
         view.addSubview(profileDetailView)
         view.insertSubview(collectionView, belowSubview: profileDetailView)
-        
-        profileViewHeight = profileDetailView.frame.height;
         
         
         NSLayoutConstraint.activate([
@@ -72,6 +72,8 @@ class ProfileViewController: UIViewController {
         
         profileViewHeight = profileDetailView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
         print("===== Profile View height in setup views \(profileViewHeight)")
+        offSetGanGan = profileViewHeight + topHeight;
+        baseOffset = profileViewHeight + topHeight;
         
     }
     
@@ -86,10 +88,9 @@ extension ProfileViewController : UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)
-        cell.backgroundColor = indexPath.item % 2 == 0 ? UIColor.green : UIColor.red
         
-        let profile = ProfileSectionCell()
-        profile.setContentInset(inset: UIEdgeInsets(top: 200, left: 0, bottom: 0, right: 0))
+        let profile = ProfileSectionCell(frame: CGRect(x: 0, y: 0, width: view.frame.height, height: view.frame.width), offset: offSetGanGan, baseOffset: baseOffset)
+        
         profile.setProtocol(ourProtocol: self)
         profile.translatesAutoresizingMaskIntoConstraints = false
         cell.addSubview(profile)
@@ -122,7 +123,9 @@ extension ProfileViewController:  TableOnScrollProtocol{
     }
     
     func scrolling(point: CGFloat) {
-        let realPoint = -point;
+        print( "======== scrolling point \(point)")
+        let realPoint = -point
+         offSetGanGan = -point
         //Add 32 (total profileView padding size to make it float)
         if(realPoint < profileViewHeight + topHeight + 32) {
              profileDetailView.frame = CGRect(x: 0, y: realPoint - topHeight - 32, width: profileDetailView.frame.width, height: profileDetailView.frame.height)

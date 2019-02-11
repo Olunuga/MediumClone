@@ -12,27 +12,36 @@ class ProfileSectionCell : UIView{
     let tableView =  UITableView()
      let profileDetailView = ProfileDetailView()
     var tableOnScroll: TableOnScrollProtocol? = nil
-    var contentInset : UIEdgeInsets = UIEdgeInsets(top: 200, left: 0, bottom: 0, right: 0)
-    var contentOffset : UIEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: -200, right: 0)
-    var headerHeight :CGFloat = 200;
+    //var contentInset : UIEdgeInsets = UIEdgeInsets(top: 200, left: 0, bottom: 0, right: 0)
+    //var contentOffset : UIEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: -250, right: 0)
+    var headerHeight :CGFloat = 200
+    var mOffset : CGFloat = 207
+    var mBaseOffset : CGFloat = 0
     
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+    }
+    
+    init(frame : CGRect, offset : CGFloat, baseOffset : CGFloat){
+        super.init(frame: frame)
+      
+        mOffset = offset;
+        mBaseOffset = baseOffset
         tableView.register(ActivityCell.self, forCellReuseIdentifier: "cell")
-        tableView.register(ProfileDetailCell.self, forCellReuseIdentifier: "profileDetailCell")
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 240
-        tableView.contentInset = contentInset
-        tableView.contentOffset = CGPoint(x: 0, y: -200)
+        tableView.contentInset =  UIEdgeInsets(top: offset, left: 0, bottom: -200, right: 0)
+        tableView.contentOffset = CGPoint(x: 0, y: -400)
         tableView.contentInsetAdjustmentBehavior = .never
         
         setUpViews()
+       
     }
+    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -72,10 +81,7 @@ class ProfileSectionCell : UIView{
     func setProtocol(ourProtocol: TableOnScrollProtocol){
         self.tableOnScroll = ourProtocol
     }
-    
-    func setContentInset(inset: UIEdgeInsets){
-        contentInset = inset;
-    }
+
     
     func setHeaderHeight(height: CGFloat){
         headerHeight = height;
@@ -98,8 +104,9 @@ extension ProfileSectionCell : UITableViewDelegate , UITableViewDataSource{
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
          let offset = scrollView.contentOffset.y
-        
+        //tableView.contentInset = UIEdgeInsets(top: mBaseOffset, left: 0, bottom: 0, right: 0)
         tableOnScroll?.scrolling(point: offset)
+        tableView.contentInset = UIEdgeInsets(top: mBaseOffset, left: 0, bottom: 0, right: 0)
         //print("i am scrolling \(scrollView.contentOffset)")
     }
 
