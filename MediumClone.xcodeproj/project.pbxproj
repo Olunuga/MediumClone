@@ -15,7 +15,6 @@
 		CF123E90214F8147009B0994 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF123E8E214F8147009B0994 /* LaunchScreen.storyboard */; };
 		CF2D8E7C219007150042BFC4 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2D8E7B219007150042BFC4 /* ActivityViewController.swift */; };
 		CF3619EB21E7034A00B4C7C4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3619EA21E7034A00B4C7C4 /* ProfileViewController.swift */; };
-		CF3619EE21E7189600B4C7C4 /* ProfileDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3619ED21E7189600B4C7C4 /* ProfileDetailCell.swift */; };
 		CF3BE1C12171CC10006365E8 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3BE1C02171CC10006365E8 /* CreateViewController.swift */; };
 		CF435471215FE671003553CE /* suggestedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF43546F215FE671003553CE /* suggestedTableViewCell.swift */; };
 		CF435472215FE671003553CE /* SuggestedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF435470215FE671003553CE /* SuggestedTableViewCell.xib */; };
@@ -23,10 +22,8 @@
 		CF435477215FECE9003553CE /* SuggestedHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF435476215FECE9003553CE /* SuggestedHeaderView.xib */; };
 		CF65442321EB2E720023E818 /* ProfileDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF65442221EB2E720023E818 /* ProfileDetailView.swift */; };
 		CF65442621EB46C90023E818 /* ProfileSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF65442521EB46C90023E818 /* ProfileSectionCell.swift */; };
-		CF65442821EB476A0023E818 /* LatestSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF65442721EB476A0023E818 /* LatestSectionViewController.swift */; };
 		CF6E08DE2156EEC900790C92 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6E08DC2156EEC900790C92 /* SearchViewController.swift */; };
 		CF6E08DF2156EEC900790C92 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF6E08DD2156EEC900790C92 /* SearchViewController.xib */; };
-		CF938BB221EEF6640072E81C /* ProfileReloaded.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF938BB121EEF6640072E81C /* ProfileReloaded.swift */; };
 		CFA7E9212159833200100038 /* SearchItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA7E91F2159833200100038 /* SearchItemViewCell.swift */; };
 		CFA7E9222159833200100038 /* SearchItemViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFA7E9202159833200100038 /* SearchItemViewCell.xib */; };
 		CFA7E92D21598C6900100038 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFA7E92C21598C6900100038 /* HeaderView.xib */; };
@@ -55,7 +52,6 @@
 		CF123E91214F8147009B0994 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF2D8E7B219007150042BFC4 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		CF3619EA21E7034A00B4C7C4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		CF3619ED21E7189600B4C7C4 /* ProfileDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailCell.swift; sourceTree = "<group>"; };
 		CF3BE1C02171CC10006365E8 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		CF43546F215FE671003553CE /* suggestedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = suggestedTableViewCell.swift; sourceTree = "<group>"; };
 		CF435470215FE671003553CE /* SuggestedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestedTableViewCell.xib; sourceTree = "<group>"; };
@@ -63,10 +59,8 @@
 		CF435476215FECE9003553CE /* SuggestedHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestedHeaderView.xib; sourceTree = "<group>"; };
 		CF65442221EB2E720023E818 /* ProfileDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailView.swift; sourceTree = "<group>"; };
 		CF65442521EB46C90023E818 /* ProfileSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSectionCell.swift; sourceTree = "<group>"; };
-		CF65442721EB476A0023E818 /* LatestSectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestSectionViewController.swift; sourceTree = "<group>"; };
 		CF6E08DC2156EEC900790C92 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		CF6E08DD2156EEC900790C92 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
-		CF938BB121EEF6640072E81C /* ProfileReloaded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileReloaded.swift; sourceTree = "<group>"; };
 		CFA7E91F2159833200100038 /* SearchItemViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemViewCell.swift; sourceTree = "<group>"; };
 		CFA7E9202159833200100038 /* SearchItemViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchItemViewCell.xib; sourceTree = "<group>"; };
 		CFA7E92C21598C6900100038 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
@@ -146,10 +140,9 @@
 		CF3619E921E7029F00B4C7C4 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				CF65442421EB46960023E818 /* Sections */,
 				CF3619EC21E717DE00B4C7C4 /* Cell */,
 				CF3619EA21E7034A00B4C7C4 /* ProfileViewController.swift */,
-				CF938BB121EEF6640072E81C /* ProfileReloaded.swift */,
+				CF65442221EB2E720023E818 /* ProfileDetailView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -157,8 +150,7 @@
 		CF3619EC21E717DE00B4C7C4 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				CF3619ED21E7189600B4C7C4 /* ProfileDetailCell.swift */,
-				CF65442221EB2E720023E818 /* ProfileDetailView.swift */,
+				CF65442521EB46C90023E818 /* ProfileSectionCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -194,15 +186,6 @@
 				CF435476215FECE9003553CE /* SuggestedHeaderView.xib */,
 			);
 			path = SuggestedHeader;
-			sourceTree = "<group>";
-		};
-		CF65442421EB46960023E818 /* Sections */ = {
-			isa = PBXGroup;
-			children = (
-				CF65442521EB46C90023E818 /* ProfileSectionCell.swift */,
-				CF65442721EB476A0023E818 /* LatestSectionViewController.swift */,
-			);
-			path = Sections;
 			sourceTree = "<group>";
 		};
 		CF6E08DB2156EDF000790C92 /* Search */ = {
@@ -437,7 +420,6 @@
 				CFA7E92F21598D8B00100038 /* HeaderView.swift in Sources */,
 				CF6E08DE2156EEC900790C92 /* SearchViewController.swift in Sources */,
 				CF435475215FECCC003553CE /* SuggestedHeaderView.swift in Sources */,
-				CF3619EE21E7189600B4C7C4 /* ProfileDetailCell.swift in Sources */,
 				CF65442321EB2E720023E818 /* ProfileDetailView.swift in Sources */,
 				CFC1AFAA21640800003DCE1F /* BookmarkViewController.swift in Sources */,
 				CF65442621EB46C90023E818 /* ProfileSectionCell.swift in Sources */,
@@ -448,12 +430,10 @@
 				CFCCCAB921521237001C0995 /* CompactStoryCollectionViewCell.swift in Sources */,
 				CFD653052150D1D8008C722B /* HomeViewController.swift in Sources */,
 				CF3BE1C12171CC10006365E8 /* CreateViewController.swift in Sources */,
-				CF938BB221EEF6640072E81C /* ProfileReloaded.swift in Sources */,
 				CFCCCABD215214E8001C0995 /* SwipableTableViewCell.swift in Sources */,
 				CF2D8E7C219007150042BFC4 /* ActivityViewController.swift in Sources */,
 				CFD653072150D226008C722B /* HomeViewModel.swift in Sources */,
 				CF435471215FE671003553CE /* suggestedTableViewCell.swift in Sources */,
-				CF65442821EB476A0023E818 /* LatestSectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
